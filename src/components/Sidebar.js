@@ -1,8 +1,12 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
-import "./Sidebar.css";
+import React, { useContext } from "react";
+import { AuthContext } from "../AuthContext";
+import "../styles/Sidebar.css";
 
 const Sidebar = () => {
+  const [ auth,setAuth] = useContext(AuthContext)
+  const {displayName,photoURL,email,uid} = auth
+ //...
   const recentItems = (topic) => {
     return (
       <div className="sidebar_recentItems">
@@ -19,9 +23,9 @@ const Sidebar = () => {
           src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
           alt="bg picture"
         />
-        <Avatar className="sidebar_avatar" />
-        <h2>Shariar Nahid</h2>
-        <h4>shariar-nahid@gmail.com</h4>
+        <Avatar className="sidebar_avatar" src={photoURL} />
+        <h2>{displayName}</h2>
+        <h4>{email}</h4>
 
         {/* sidebar_stats start */}
         <div className="sidebar_stats">

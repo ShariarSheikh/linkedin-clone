@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "./Feed.css";
+import "../styles/Feed.css";
 // import component
-import InputOptions from "./InputOptions";
+import InputOptions from "../components/InputOptions";
+import Post from "../components/Post";
 // import icons
 import { IoCreateOutline } from "react-icons/io5";
 import { BsCardImage } from "react-icons/bs";
 import { MdSubscriptions } from "react-icons/md";
 import { MdEventNote } from "react-icons/md";
 import { AiOutlineCalendar } from "react-icons/ai";
-import Post from "./Post";
-import { db } from "./firebase";
+import { db } from "../firebase";
 import firebase from "firebase";
+
 
 const Feed = () => {
   const [input, setInput] = useState("");
@@ -66,12 +67,10 @@ const Feed = () => {
         </div>
       </div>
       {/* post container  */}
-      {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+      {posts.map(({ id, data: { description, message } }) => (
         <Post key={id}
-        name={name}
         description={description}
         message={message}
-        photoUrl={photoUrl}
         />
       ))}
      

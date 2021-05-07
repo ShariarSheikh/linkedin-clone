@@ -1,0 +1,62 @@
+.login_page{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#fff;
+    
+}
+.login_form_container{
+    width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.login_logo_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px
+}
+.login_logo_div > img{
+    
+    }
+
+.login_form_container > form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.login_form_container > form > input {
+    width: 94%;
+    padding: 16px 10px;
+    border-radius: 5px;
+    border: 2px solid #757575;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.login_form_container > form > button {
+    width: 100%;
+    padding: 13px 0px;
+    border-radius: 3px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color:rgb(11, 79, 156);
+    color:white;
+}
+.login_create_new_account{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+}
+.form_error{
+    color:red;
+    margin-bottom: 10px;
+}

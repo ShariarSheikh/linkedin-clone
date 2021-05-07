@@ -1,21 +1,25 @@
 import { Avatar } from '@material-ui/core'
-import React from 'react'
-import InputOptions from './InputOptions'
-import './Post.css'
-
+import React, { useContext } from 'react'
+import '../styles/Post.css'
+import InputOptions from './InputOptions';
 //icon import
 import { FiThumbsUp } from 'react-icons/fi';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import { AiOutlineSend } from 'react-icons/ai';
+import { AuthContext } from '../AuthContext';
 
-const Post = ({name,description,message,photoUrl }) => {
+
+const Post = ({description,message }) => {
+    const [auth,setAuth] = useContext(AuthContext)
+  const {displayName,photoURL,email,uid} = auth
+
     return (
         <div className="post">
             <div className="post_header">
-                <Avatar/>
+                <Avatar src={photoURL}/>
                 <div className="post_info">
-                <h2>{name}</h2>
+                <h2>{displayName}</h2>
                 <p>{description}</p>
             </div>
             </div>
